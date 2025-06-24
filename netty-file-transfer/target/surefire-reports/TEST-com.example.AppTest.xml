@@ -1,56 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.AppTest" time="0.041" tests="1" errors="0" skipped="0" failures="0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="com.example.AppTest" time="0.006" errors="0" skipped="0">
   <properties>
-    <property name="java.specification.version" value="21"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/app/netty-file-transfer/target/test-classes:/app/netty-file-transfer/target/classes:/home/jules/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/jules/.m2/repository/io/netty/netty-all/4.1.111.Final/netty-all-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-buffer/4.1.111.Final/netty-buffer-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec/4.1.111.Final/netty-codec-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-dns/4.1.111.Final/netty-codec-dns-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-haproxy/4.1.111.Final/netty-codec-haproxy-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-http/4.1.111.Final/netty-codec-http-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-http2/4.1.111.Final/netty-codec-http2-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-memcache/4.1.111.Final/netty-codec-memcache-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-mqtt/4.1.111.Final/netty-codec-mqtt-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-redis/4.1.111.Final/netty-codec-redis-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-smtp/4.1.111.Final/netty-codec-smtp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-socks/4.1.111.Final/netty-codec-socks-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-stomp/4.1.111.Final/netty-codec-stomp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-xml/4.1.111.Final/netty-codec-xml-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-common/4.1.111.Final/netty-common-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-handler/4.1.111.Final/netty-handler-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.111.Final/netty-transport-native-unix-common-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-handler-proxy/4.1.111.Final/netty-handler-proxy-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.1.111.Final/netty-handler-ssl-ocsp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-resolver/4.1.111.Final/netty-resolver-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns/4.1.111.Final/netty-resolver-dns-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport/4.1.111.Final/netty-transport-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-rxtx/4.1.111.Final/netty-transport-rxtx-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-sctp/4.1.111.Final/netty-transport-sctp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-udt/4.1.111.Final/netty-transport-udt-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.111.Final/netty-transport-classes-epoll-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-classes-kqueue/4.1.111.Final/netty-transport-classes-kqueue-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.111.Final/netty-resolver-dns-classes-macos-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-epoll/4.1.111.Final/netty-transport-native-epoll-4.1.111.Final-linux-x86_64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-epoll/4.1.111.Final/netty-transport-native-epoll-4.1.111.Final-linux-aarch_64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-epoll/4.1.111.Final/netty-transport-native-epoll-4.1.111.Final-linux-riscv64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.111.Final/netty-transport-native-kqueue-4.1.111.Final-osx-x86_64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.111.Final/netty-transport-native-kqueue-4.1.111.Final-osx-aarch_64.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.111.Final/netty-resolver-dns-native-macos-4.1.111.Final-osx-x86_64.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.111.Final/netty-resolver-dns-native-macos-4.1.111.Final-osx-aarch_64.jar:"/>
-    <property name="java.vm.vendor" value="Ubuntu"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://ubuntu.com/"/>
-    <property name="os.name" value="Linux"/>
-    <property name="java.vm.specification.version" value="21"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\bin"/>
+    <property name="java.vm.version" value="25.202-b08"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\code\netty-demo\netty-file-transfer"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/app/netty-file-transfer/target/surefire/surefirebooter-20250624012853827_3.jar /app/netty-file-transfer/target/surefire 2025-06-24T01-28-53_616-jvmRun1 surefire-20250624012853827_1tmp surefire_0-20250624012853827_2tmp"/>
-    <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/app/netty-file-transfer/target/test-classes:/app/netty-file-transfer/target/classes:/home/jules/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/jules/.m2/repository/io/netty/netty-all/4.1.111.Final/netty-all-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-buffer/4.1.111.Final/netty-buffer-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec/4.1.111.Final/netty-codec-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-dns/4.1.111.Final/netty-codec-dns-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-haproxy/4.1.111.Final/netty-codec-haproxy-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-http/4.1.111.Final/netty-codec-http-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-http2/4.1.111.Final/netty-codec-http2-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-memcache/4.1.111.Final/netty-codec-memcache-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-mqtt/4.1.111.Final/netty-codec-mqtt-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-redis/4.1.111.Final/netty-codec-redis-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-smtp/4.1.111.Final/netty-codec-smtp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-socks/4.1.111.Final/netty-codec-socks-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-stomp/4.1.111.Final/netty-codec-stomp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-codec-xml/4.1.111.Final/netty-codec-xml-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-common/4.1.111.Final/netty-common-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-handler/4.1.111.Final/netty-handler-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.111.Final/netty-transport-native-unix-common-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-handler-proxy/4.1.111.Final/netty-handler-proxy-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.1.111.Final/netty-handler-ssl-ocsp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-resolver/4.1.111.Final/netty-resolver-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns/4.1.111.Final/netty-resolver-dns-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport/4.1.111.Final/netty-transport-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-rxtx/4.1.111.Final/netty-transport-rxtx-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-sctp/4.1.111.Final/netty-transport-sctp-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-udt/4.1.111.Final/netty-transport-udt-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.111.Final/netty-transport-classes-epoll-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-classes-kqueue/4.1.111.Final/netty-transport-classes-kqueue-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.111.Final/netty-resolver-dns-classes-macos-4.1.111.Final.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-epoll/4.1.111.Final/netty-transport-native-epoll-4.1.111.Final-linux-x86_64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-epoll/4.1.111.Final/netty-transport-native-epoll-4.1.111.Final-linux-aarch_64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-epoll/4.1.111.Final/netty-transport-native-epoll-4.1.111.Final-linux-riscv64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.111.Final/netty-transport-native-kqueue-4.1.111.Final-osx-x86_64.jar:/home/jules/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.111.Final/netty-transport-native-kqueue-4.1.111.Final-osx-aarch_64.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.111.Final/netty-resolver-dns-native-macos-4.1.111.Final-osx-x86_64.jar:/home/jules/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.111.Final/netty-resolver-dns-native-macos-4.1.111.Final-osx-aarch_64.jar:"/>
-    <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/jules"/>
-    <property name="user.language" value="en"/>
-    <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2025-04-15"/>
-    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/app/netty-file-transfer"/>
-    <property name="java.vm.compressedOopsMode" value="32-bit"/>
-    <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/app/netty-file-transfer/target/surefire/surefirebooter-20250624012853827_3.jar"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.7+6-Ubuntu-0ubuntu124.04"/>
-    <property name="user.name" value="jules"/>
-    <property name="stdout.encoding" value="UTF-8"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="6.8.0"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="localRepository" value="/home/jules/.m2/repository"/>
-    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
-    <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="java.version" value="21.0.7"/>
-    <property name="user.dir" value="/app/netty-file-transfer"/>
-    <property name="os.arch" value="amd64"/>
+    <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
-    <property name="stderr.encoding" value="UTF-8"/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.vendor" value="Ubuntu"/>
-    <property name="java.vm.version" value="21.0.7+6-Ubuntu-0ubuntu124.04"/>
+    <property name="user.dir" value="D:\code\netty-demo\netty-file-transfer"/>
+    <property name="java.runtime.version" value="1.8.0_202-b08"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Allen\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.5\plugins\maven\lib\maven3\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_202\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\ShadowBot;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_202\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\bin;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.2.1\;C:\Program Files\nodejs\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;c:\Users\Allen\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\prg\minikube;C:\Program Files\Oracle\VirtualBox;;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\ShadowBot;C:\Users\Allen\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Allen\AppData\Local\Programs\Python\Python310\;C:\Users\Allen\AppData\Local\Microsoft\WindowsApps;C:\Users\Allen\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Allen\go\bin;C:\Program Files\JetBrains\GoLand 2022.2.6\bin;;C:\Users\Allen\AppData\Roaming\npm;C:\Users\Allen\AppData\Local\GitHubDesktop\bin;C:\Users\Allen\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.5\plugins\maven\lib\maven3\bin;C:\Users\Allen\AppData\Local\Programs\Ollama;C:\Users\Allen\go\bin;C:\Users\Allen\AppData\Local\Microsoft\WindowsApps;."/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.5\plugins\maven\lib\maven3\bin\../conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.5\plugins\maven\lib\maven3\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Allen"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="user.name" value="Allen"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.5\plugins\maven\lib\maven3\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_202\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_202"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_202\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_202\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_202\jre\classes"/>
+    <property name="sun.stderr.encoding" value="ms936"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.5\plugins\maven\lib\maven3\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
-    <property name="java.class.version" value="65.0"/>
+    <property name="sun.stdout.encoding" value="ms936"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="testApp" classname="com.example.AppTest" time="0.006"/>
+  <testcase classname="com.example.AppTest" name="testApp" time="0.006"/>
 </testsuite>
