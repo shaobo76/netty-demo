@@ -1,0 +1,8 @@
+Hello, this is a sample file for testing the Netty file transfer application.
+It is a simple text file, but the application is designed to handle large files efficiently using zero-copy.
+
+Line 1
+Line 2
+Line 3
+...
+End of file.

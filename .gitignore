@@ -1,0 +1,29 @@
+# Java 相关的忽略规则
+*.class
+
+# Maven 相关的忽略规则
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
+.apt_generated
+
+# Gradle 相关的忽略规则 (如果你同时用Gradle或迁移项目)
+.gradle/
+build/
+
+# IDE 相关的忽略规则
+.idea/             # IntelliJ IDEA
+*.iml              # IntelliJ IDEA
+*.ipr
+*.iws
+.project           # Eclipse
+.classpath         # Eclipse
+.settings/         # Eclipse
+.DS_Store          # macOS specific
+Thumbs.db          # Windows specific
