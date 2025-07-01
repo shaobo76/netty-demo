@@ -6,7 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 import java.io.File;
-import java.io.FileOutputStream;
+import java.nio.file.StandardOpenOption;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
@@ -82,7 +82,7 @@ public class DownstreamHandler extends SimpleChannelInboundHandler<FileChunkMess
             try {
                 // Store file with a temporary extension until fully validated.
                 File tempFile = new File(storagePath, key + ".tmp");
-                return new FileOutputStream(tempFile, true).getChannel();
+                return FileChannel.open(tempFile.toPath(), StandardOpenOption.CREATE, StandardOpenOption.WRITE, StandardOpenOption.APPEND);
             } catch (IOException e) {
                 throw new RuntimeException("Failed to open file channel for " + key, e);
             }
