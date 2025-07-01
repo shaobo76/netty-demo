@@ -1,5 +1,7 @@
 package com.kilo.transfer.downstream;
 
+import com.kilo.transfer.common.codec.JsonDecoder;
+import com.kilo.transfer.common.codec.JsonEncoder;
 import com.kilo.transfer.downstream.handler.DownstreamHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,9 +10,6 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.serialization.ClassResolvers;
-import io.netty.handler.codec.serialization.ObjectDecoder;
-import io.netty.handler.codec.serialization.ObjectEncoder;
 import io.netty.util.concurrent.DefaultEventExecutorGroup;
 import io.netty.util.concurrent.EventExecutorGroup;
 
@@ -40,8 +39,8 @@ public class DownstreamServer {
                             ch.pipeline().addLast(
                                     // Using Java serialization for simplicity.
                                     // For production, consider using Protobuf or other efficient serialization frameworks.
-                                    new ObjectEncoder(),
-                                    new ObjectDecoder(ClassResolvers.cacheDisabled(null))
+                                    new JsonEncoder(),
+                                    new JsonDecoder()
                             ).addLast(businessGroup, new DownstreamHandler(storagePath));
                         }
                     });

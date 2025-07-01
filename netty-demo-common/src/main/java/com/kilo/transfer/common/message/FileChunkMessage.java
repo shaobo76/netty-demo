@@ -1,6 +1,7 @@
 package com.kilo.transfer.common.message;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Arrays;
 
 /**
@@ -8,9 +9,7 @@ import java.util.Arrays;
  * This object is sent from the Upstream Server to the Downstream Server.
  * This class is immutable to ensure thread safety in a concurrent environment like Netty.
  */
-public final class FileChunkMessage implements Serializable {
-
-    private static final long serialVersionUID = 2L; // Bumped version due to class change
+public final class FileChunkMessage {
 
     // File-level metadata
     private final String fileId;
@@ -25,9 +24,16 @@ public final class FileChunkMessage implements Serializable {
     private final byte[] data;
     private final boolean isLast;
 
-    public FileChunkMessage(String fileId, String fileHash, String hashAlgorithm, int totalChunks,
-                            int chunkIndex, String chunkHash, String chunkHashAlgorithm,
-                            byte[] data, boolean isLast) {
+    @JsonCreator
+    public FileChunkMessage(@JsonProperty("fileId") String fileId,
+                            @JsonProperty("fileHash") String fileHash,
+                            @JsonProperty("hashAlgorithm") String hashAlgorithm,
+                            @JsonProperty("totalChunks") int totalChunks,
+                            @JsonProperty("chunkIndex") int chunkIndex,
+                            @JsonProperty("chunkHash") String chunkHash,
+                            @JsonProperty("chunkHashAlgorithm") String chunkHashAlgorithm,
+                            @JsonProperty("data") byte[] data,
+                            @JsonProperty("last") boolean isLast) {
         this.fileId = fileId;
         this.fileHash = fileHash;
         this.hashAlgorithm = hashAlgorithm;
