@@ -37,16 +37,17 @@ public class UpstreamHandler extends ChannelInboundHandlerAdapter {
                 raf.seek(offset);
                 raf.readFully(data);
 
-                FileChunkMessage chunk = new FileChunkMessage();
-                chunk.setFileId(file.getName());
-                chunk.setFileHash(fileHash);
-                chunk.setHashAlgorithm("SHA-256");
-                chunk.setTotalChunks(totalChunks);
-                chunk.setChunkIndex(i);
-                chunk.setData(data);
-                chunk.setChunkHash(HashUtil.crc32(data));
-                chunk.setChunkHashAlgorithm("CRC32");
-                chunk.setLast(i == totalChunks - 1);
+                FileChunkMessage chunk = new FileChunkMessage(
+                    file.getName(),
+                    fileHash,
+                    "SHA-256",
+                    totalChunks,
+                    i,
+                    HashUtil.crc32(data),
+                    "CRC32",
+                    data,
+                    i == totalChunks - 1
+                );
                 
                 System.out.printf("Sending chunk %d/%d for file %s%n", i + 1, totalChunks, file.getName());
                 ctx.writeAndFlush(chunk).sync(); // Ensure chunks are sent sequentially.

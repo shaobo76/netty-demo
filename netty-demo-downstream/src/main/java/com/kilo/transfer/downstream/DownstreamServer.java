@@ -41,10 +41,8 @@ public class DownstreamServer {
                                     // Using Java serialization for simplicity.
                                     // For production, consider using Protobuf or other efficient serialization frameworks.
                                     new ObjectEncoder(),
-                                    new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
-                                    // Add the business logic handler to the dedicated businessGroup.
-                                    businessGroup, new DownstreamHandler(storagePath)
-                            );
+                                    new ObjectDecoder(ClassResolvers.cacheDisabled(null))
+                            ).addLast(businessGroup, new DownstreamHandler(storagePath));
                         }
                     });
 

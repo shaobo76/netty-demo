@@ -1,7 +1,8 @@
 package com.kilo.transfer.common.utils;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -31,10 +32,10 @@ public class HashUtil {
      */
     public static String sha256(Path path) throws IOException, NoSuchAlgorithmException {
         MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
-        try (FileInputStream fis = new FileInputStream(path.toFile())) {
+        try (InputStream is = Files.newInputStream(path)) {
             byte[] buffer = new byte[8192];
             int bytesRead;
-            while ((bytesRead = fis.read(buffer)) != -1) {
+            while ((bytesRead = is.read(buffer)) != -1) {
                 sha256.update(buffer, 0, bytesRead);
             }
         }
