@@ -1,7 +1,7 @@
 package com.kilo.transfer.downstream;
 
-import com.kilo.transfer.common.codec.JsonDecoder;
-import com.kilo.transfer.common.codec.JsonEncoder;
+import com.kilo.transfer.common.codec.FileChunkDecoder;
+import com.kilo.transfer.common.codec.FileChunkEncoder;
 import com.kilo.transfer.downstream.handler.DownstreamHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -39,8 +39,8 @@ public class DownstreamServer {
                             ch.pipeline().addLast(
                                     // Using Java serialization for simplicity.
                                     // For production, consider using Protobuf or other efficient serialization frameworks.
-                                    new JsonEncoder(),
-                                    new JsonDecoder()
+                                    new FileChunkEncoder(),
+                                    new FileChunkDecoder()
                             ).addLast(businessGroup, new DownstreamHandler(storagePath));
                         }
                     });

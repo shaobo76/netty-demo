@@ -1,7 +1,7 @@
 package com.kilo.transfer.common.message;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import io.netty.buffer.ByteBuf;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 /**
@@ -24,16 +24,15 @@ public final class FileChunkMessage {
     private final byte[] data;
     private final boolean isLast;
 
-    @JsonCreator
-    public FileChunkMessage(@JsonProperty("fileId") String fileId,
-                            @JsonProperty("fileHash") String fileHash,
-                            @JsonProperty("hashAlgorithm") String hashAlgorithm,
-                            @JsonProperty("totalChunks") int totalChunks,
-                            @JsonProperty("chunkIndex") int chunkIndex,
-                            @JsonProperty("chunkHash") String chunkHash,
-                            @JsonProperty("chunkHashAlgorithm") String chunkHashAlgorithm,
-                            @JsonProperty("data") byte[] data,
-                            @JsonProperty("last") boolean isLast) {
+    public FileChunkMessage(String fileId,
+                            String fileHash,
+                            String hashAlgorithm,
+                            int totalChunks,
+                            int chunkIndex,
+                            String chunkHash,
+                            String chunkHashAlgorithm,
+                            byte[] data,
+                            boolean isLast) {
         this.fileId = fileId;
         this.fileHash = fileHash;
         this.hashAlgorithm = hashAlgorithm;
@@ -44,6 +43,48 @@ public final class FileChunkMessage {
         // Defensive copy to ensure immutability of the byte array
         this.data = data != null ? Arrays.copyOf(data, data.length) : null;
         this.isLast = isLast;
+    }
+
+    // Deserialization constructor
+    public FileChunkMessage(ByteBuf in) {
+        this.fileId = readString(in);
+        this.fileHash = readString(in);
+        this.hashAlgorithm = readString(in);
+        this.totalChunks = in.readInt();
+        this.chunkIndex = in.readInt();
+        this.chunkHash = readString(in);
+        this.chunkHashAlgorithm = readString(in);
+        int dataLength = in.readInt();
+        this.data = new byte[dataLength];
+        in.readBytes(this.data);
+        this.isLast = in.readBoolean();
+    }
+
+    // Serialization method
+    public void toByteBuf(ByteBuf out) {
+        writeString(out, fileId);
+        writeString(out, fileHash);
+        writeString(out, hashAlgorithm);
+        out.writeInt(totalChunks);
+        out.writeInt(chunkIndex);
+        writeString(out, chunkHash);
+        writeString(out, chunkHashAlgorithm);
+        out.writeInt(data.length);
+        out.writeBytes(data);
+        out.writeBoolean(isLast);
+    }
+
+    private void writeString(ByteBuf out, String s) {
+        byte[] bytes = s.getBytes(StandardCharsets.UTF_8);
+        out.writeInt(bytes.length);
+        out.writeBytes(bytes);
+    }
+
+    private String readString(ByteBuf in) {
+        int length = in.readInt();
+        byte[] bytes = new byte[length];
+        in.readBytes(bytes);
+        return new String(bytes, StandardCharsets.UTF_8);
     }
 
     // Getters
