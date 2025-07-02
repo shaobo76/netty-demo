@@ -47,7 +47,7 @@ public class DownstreamHandler extends SimpleChannelInboundHandler<FileChunkMess
             closeFileChannel(msg.getFileId());
 
             // FR-5b: File-level validation
-            handleFileCompletion(msg);
+            handleFileCompletion(ctx, msg);
         }
     }
 
@@ -59,7 +59,7 @@ public class DownstreamHandler extends SimpleChannelInboundHandler<FileChunkMess
         return actualHash.equalsIgnoreCase(msg.getChunkHash());
     }
 
-    private void handleFileCompletion(FileChunkMessage msg) throws Exception {
+    private void handleFileCompletion(ChannelHandlerContext ctx, FileChunkMessage msg) throws Exception {
         Path tempPath = Paths.get(storagePath, msg.getFileId() + ".tmp");
         Path finalPath = Paths.get(storagePath, msg.getFileId());
 
@@ -69,11 +69,11 @@ public class DownstreamHandler extends SimpleChannelInboundHandler<FileChunkMess
         if (actualFileHash.equalsIgnoreCase(msg.getFileHash())) {
             Files.move(tempPath, finalPath, StandardCopyOption.REPLACE_EXISTING);
             System.out.printf("File %s successfully transferred and verified.%n", msg.getFileId());
-            // TODO: Send success confirmation to upstream.
+            ctx.writeAndFlush("OK");
         } else {
             Files.delete(tempPath);
             System.err.printf("File validation failed for %s. Deleted temporary file.%n", msg.getFileId());
-            // TODO: Send failure notification to upstream.
+            ctx.writeAndFlush("FAIL");
         }
     }
 
